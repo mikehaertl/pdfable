@@ -216,7 +216,7 @@ class Pdfable extends CBehavior
      */
     public function createPdf()
     {
-        Yii::import('ext.pdfable.PdfFile');
+        require_once(__DIR__.'/PdfFile.php');
 
         $pdf = new PdfFile($this->defaultPdfOptions, $this->defaultPdfPageOptions);
         $pdf->controller = $this->owner;

@@ -14,7 +14,7 @@
  * @version 1.0.0
  * @license http://www.opensource.org/licenses/MIT
  */
-Yii::import('ext.pdfable.WkHtmlToPdf');
+require_once(__DIR__.'/WkHtmlToPdf.php');
 class PdfFile extends WkHtmlToPdf
 {
     /**

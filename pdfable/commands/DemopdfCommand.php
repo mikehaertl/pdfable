@@ -17,7 +17,7 @@
  * @version 1.0.0
  * @license http://www.opensource.org/licenses/MIT
  */
-Yii::import('ext.pdfable.PdfFile');
+require_once(__DIR__.'/../../PdfFile.php');
 class DemopdfCommand extends CConsoleCommand
 {
     /**
