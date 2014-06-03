@@ -11,6 +11,13 @@
             "email": "haertl.mike@gmail.com"
         }
     ],
+    "autoload": {
+        "classmap" : [
+            "Pdfable.php",
+            "PdfFile.php",
+            "WkHtmlToPdf.php"
+        ]
+    },
     "require": {
         "php": ">=5.0.0"
     }
