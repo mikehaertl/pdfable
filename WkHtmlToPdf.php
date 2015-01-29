@@ -271,7 +271,7 @@ class WkHtmlToPdf
     /**
      * @return mixed the temporary PDF filename or false on error (triggers PDf creation)
      */
-    protected function getPdfFilename()
+    public function getPdfFilename()
     {
         if($this->tmpFile===null)
         {
