@@ -206,8 +206,7 @@ class Pdfable extends CBehavior
 
         if(!$pdf->send($filename))
         {
-            Yii::log("Could not create PDF for view $view",'error','ext.pdfable.Pdfable');
-            YII_DEBUG && Yii::trace($pdf->getError(), 'ext.pdfable.Pdfable');
+            throw new CException("Could not create PDF for view $view" . (YII_DEBUG ? "\n\n" . $pdf->getError() : ''));
         }
     }
 
