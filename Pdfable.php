@@ -81,7 +81,7 @@
  *                  'user-style-sheet'  => Yii::getPathOfAlias('webroot').'/css/pdf.css',
  *              ),
  *
- *              // Use other tmp directory instead of application.runtime
+ *              // Use other tmp directory instead of Yii::app()->runtimePath
  *              'tmpAlias' => 'application.var.tmp',
  *          ),
  *      );
@@ -131,9 +131,9 @@ class Pdfable extends CBehavior
     public $defaultPdfPageOptions;
 
     /**
-     * @var mixed path alias of temp directory. Default is 'application.runtime'.
+     * @var mixed path alias of temp directory. Defaults to Yii::app()->runtimePath.
      */
-    public $tmpAlias='application.runtime';
+    public $tmpAlias = null;
 
     private $_options = array();
     private $_pageOptions = array();
@@ -186,7 +186,12 @@ class Pdfable extends CBehavior
     private function getTmpDir()
     {
         if($this->_tmp===null)
-            $this->_tmp = Yii::getPathOfAlias($this->tmpAlias);
+        {
+            if($this->tmpAlias!==null)
+                $this->_tmp = Yii::getPathOfAlias($this->tmpAlias);
+            else
+                $this->_tmp = Yii::app()->runtimePath;
+        }
 
         return $this->_tmp;
     }
