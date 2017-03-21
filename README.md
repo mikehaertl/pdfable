@@ -179,7 +179,7 @@ You can set default PDF options for the document and each page in the
                    'user-style-sheet'  => Yii::getPathOfAlias('webroot').'/css/pdf.css',
                ),
 
-               // Use other tmp directory instead of application.runtime
+               // Use other tmp directory instead of Yii::app()->runtimePath
                'tmpAlias' => 'application.var.tmp',
            ),
        );
